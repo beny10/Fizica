@@ -1,0 +1,1 @@
+Project for physics that measure how an capacitor is charging and makes a graphic.
