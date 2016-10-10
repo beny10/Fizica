@@ -1,0 +1,9 @@
+E:\Beni\Fizica\GraphDrawer\GraphDrawer\bin\Debug\GraphDrawer.exe.config
+E:\Beni\Fizica\GraphDrawer\GraphDrawer\bin\Debug\GraphDrawer.exe
+E:\Beni\Fizica\GraphDrawer\GraphDrawer\bin\Debug\GraphDrawer.pdb
+E:\Beni\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.csprojResolveAssemblyReference.cache
+E:\Beni\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.Form1.resources
+E:\Beni\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.Properties.Resources.resources
+E:\Beni\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.csproj.GenerateResource.Cache
+E:\Beni\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.exe
+E:\Beni\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.pdb
