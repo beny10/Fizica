@@ -12,7 +12,7 @@ namespace GraphDrawer
         private Port _port;
         private Action<Image> _drawAction;
         private int _margin = 100;
-        private Pen _pen = new Pen(Color.Black);
+        private Pen _pen = new Pen(Color.Black,3);
         private Size _imageSize = new Size(1000, 1300);
         public Drawer(Action<Image> drawAction)
         {
@@ -38,8 +38,6 @@ namespace GraphDrawer
         }
         private void PacketReceived(DataSet set)
         {
-            if (set.Count < 40)
-                return;
             Bitmap image = new Bitmap(_imageSize.Width, _imageSize.Height);
             Graphics graph = Graphics.FromImage(image);
             graph.TranslateTransform(_margin, image.Height- _margin);

@@ -1,27 +1,33 @@
-int pin=6;
-int dischargePin=9;
+int pin = 6;
+int mode = 0;
 void setup()
 {
-  pinMode(pin,INPUT);
+  pinMode(pin, OUTPUT);
   Serial.begin(9600);
-  pinMode(dischargePin,INPUT);
 }
-int count=0;
+int count = 0;
 void loop()
 {
-  digitalWrite(pin,HIGH);
-  int voltage=analogRead(A0);
+  int voltage = analogRead(A0);
   Serial.println(voltage);
-  delay(1);
-  count++;
-  if(count==40)
+  if (count == 60)
   {
-    count=0;
-    pinMode(dischargePin,OUTPUT);
-    digitalWrite(dischargePin,LOW);
-    digitalWrite(pin,LOW);
-    delay(200);
-    Serial.println(-1);
-    pinMode(dischargePin,INPUT);
+    delay(1000);
+    count = 0;
+    mode++;
+    mode = mode % 2;
+    if (mode == 0)
+    {
+      Serial.println(-1);
+      int voltage = analogRead(A0);
+      Serial.println(voltage);
+      digitalWrite(pin, HIGH);
+    }
+    else
+    {
+      digitalWrite(pin, LOW);
+    }
   }
+  count++;
+  delay(1);
 }
