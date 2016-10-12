@@ -40,7 +40,7 @@ namespace GraphDrawer
         {
             Bitmap image = new Bitmap(_imageSize.Width, _imageSize.Height);
             Graphics graph = Graphics.FromImage(image);
-            graph.TranslateTransform(_margin, image.Height- _margin);
+            graph.TranslateTransform(_margin+10, image.Height- _margin);
             DrawLines(graph);
             List<Point> points = set.GetPoints();
             for (int i = 1; i < set.Count; i++)

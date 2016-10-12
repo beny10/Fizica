@@ -10,9 +10,8 @@ void loop()
 {
   int voltage = analogRead(A0);
   Serial.println(voltage);
-  if (count == 60)
+  if (count == 500)
   {
-    delay(1000);
     count = 0;
     mode++;
     mode = mode % 2;
@@ -29,5 +28,5 @@ void loop()
     }
   }
   count++;
-  delay(1);
+  delay(80);
 }
