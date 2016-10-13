@@ -10,6 +10,7 @@ namespace GraphDrawer
     public class DataSet
     {
         private List<Point> _set;
+        private ActionType _type;
         public int Count
         {
             get
@@ -17,9 +18,17 @@ namespace GraphDrawer
                 return _set.Count;
             }
         }
-        public DataSet()
+        public ActionType Type
+        {
+            get
+            {
+                return _type;
+            }
+        }
+        public DataSet(ActionType type)
         {
             _set = new List<Point>();
+            _type = type;
         }
         public void AddValue(int value)
         {
