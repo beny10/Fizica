@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.ListView;
 
 namespace GraphDrawer
 {
@@ -19,12 +20,12 @@ namespace GraphDrawer
             InitializeComponent();
             _drawer = new Drawer(ImageReceived);
         }
-        private void ImageReceived(Image image,ActionType type,DataSet set)
+        private void ImageReceived(Image image,DataSet set)
         {
             if (_isStopped)
                 return;
             pictureBox1.Image = image;
-            switch(type)
+            switch(set.Type)
             {
                 case ActionType.Charging:
                     labelIncarcare.Invoke(new MethodInvoker(delegate
@@ -45,10 +46,11 @@ namespace GraphDrawer
             {
                 listView1.Items.Clear();
             }));
+            List<Read> reads = set.GetReads();
             for (int i = 0; i < set.Count; i++)
             {
-                double value = -set.GetPoints()[i].Y;
-                int time = (set.GetPoints()[i].X-10)*80;
+                double value = reads[i].Voltage;
+                int time = reads[i].Time;
                 value = value * 5.0 / 1024.0;
                 string voltage = value.ToString();
                 if (voltage.Length > 4)
@@ -60,20 +62,40 @@ namespace GraphDrawer
                     listView1.Items.Add(item);
                 }));
             }
+            
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void EnableStartButton()
+        {
+            button1.Enabled = true;
+            button2.Enabled = false;
+        }
+        private void EnableStopButton()
         {
             button1.Enabled = false;
             button2.Enabled = true;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EnableStopButton();
             _drawer.Start();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button1.Enabled = true;
-            button2.Enabled = false;
+            EnableStartButton();
             _drawer.Stop();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            _drawer.Charge();
+            EnableStopButton();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            EnableStopButton();
+            _drawer.Discharge();
         }
     }
 }

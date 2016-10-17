@@ -22,11 +22,15 @@ namespace GraphDrawer
         }
         public void StartProccess()
         {
-            _port.Write("1");
+            _port.Write("2");
         }
         public void StopProccess()
         {
-            _port.Write("0");
+            _port.Write("3");
+        }
+        public void SendByte(int value)
+        {
+            _port.Write(value.ToString());
         }
         private void Read()
         {
@@ -35,18 +39,20 @@ namespace GraphDrawer
                 string value = _port.ReadLine().Replace("\r", "");
                 if (value.Contains("-20"))
                 {
-                    _packetReceived(_set);
-                    _set = new DataSet(ActionType.Charging);
+                    _set.Type = ActionType.Charging;
                 }
                 if (value.Contains("-21"))
                 {
+                    _set.Type = ActionType.Discharging;
+                }
+                if(value.Contains("-end-"))
+                {
                     _packetReceived(_set);
-                    _set = new DataSet(ActionType.Discharging);
                 }
                 if (value != "")
+                {
                     _set.AddValue(value);
-                if(_set.Count%50==0)
-                    _packetReceived(_set);
+                }
             }
         }
         private void _port_DataReceived(object sender, SerialDataReceivedEventArgs e)

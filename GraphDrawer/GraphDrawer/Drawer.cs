@@ -10,11 +10,11 @@ namespace GraphDrawer
     public class Drawer
     {
         private Port _port;
-        private Action<Image, ActionType, DataSet> _drawAction;
+        private Action<Image, DataSet> _drawAction;
         private int _margin = 100;
         private Pen _pen = new Pen(Color.Black,3);
         private Size _imageSize = new Size(1000, 1300);
-        public Drawer(Action<Image,ActionType,DataSet> drawAction)
+        public Drawer(Action<Image,DataSet> drawAction)
         {
             _port = new Port(PacketReceived);
             _drawAction = drawAction;
@@ -44,6 +44,14 @@ namespace GraphDrawer
         {
             _port.StartProccess();
         }
+        public void Charge()
+        {
+            _port.SendByte(1);
+        }
+        public void Discharge()
+        {
+            _port.SendByte(0);
+        }
         private void PacketReceived(DataSet set)
         {
             Bitmap image = new Bitmap(_imageSize.Width, _imageSize.Height);
@@ -55,7 +63,7 @@ namespace GraphDrawer
             {
                 graph.DrawLine(_pen, points[i-1], points[i]);
             }
-            _drawAction(image,set.Type,set);
+            _drawAction(image,set);
         }
     }
 }
