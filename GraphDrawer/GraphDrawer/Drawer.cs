@@ -13,7 +13,7 @@ namespace GraphDrawer
         private Action<Image, DataSet> _drawAction;
         private int _margin = 100;
         private Pen _pen = new Pen(Color.Black,3);
-        private Size _imageSize = new Size(1000, 1300);
+        private Size _imageSize = new Size(2000, 1300);
         public Drawer(Action<Image,DataSet> drawAction)
         {
             _port = new Port(PacketReceived);
@@ -61,7 +61,10 @@ namespace GraphDrawer
             List<Point> points = set.GetPoints();
             for (int i = 1; i < set.Count; i++)
             {
-                graph.DrawLine(_pen, points[i-1], points[i]);
+                if (set.GetReads()[i].Type == ReadType.NewInstruction)
+                    graph.DrawLine(new Pen(Color.Red), new Point(points[i].X, 0), new Point(points[i].X, -_imageSize.Height));
+                else
+                    graph.DrawLine(_pen, points[i-1], points[i]);
             }
             _drawAction(image,set);
         }

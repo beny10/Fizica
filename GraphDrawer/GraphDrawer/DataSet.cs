@@ -34,9 +34,13 @@ namespace GraphDrawer
             _set = new List<Read>();
             _type = type;
         }
-        public void AddValue(int time,int voltage)
+        public void AddValue(int time, int voltage)
         {
             Read read = new Read(time, voltage);
+            _set.Add(read);
+        }
+        public void AddValue(Read read)
+        {
             _set.Add(read);
         }
         public void AddValue(string value)
@@ -59,7 +63,7 @@ namespace GraphDrawer
         }
         public List<Point> GetPoints()
         {
-            if(_set.Count>=700)
+            if(_set.Count>=1400)
             {
                 _set.RemoveRange(0, 300);
                 

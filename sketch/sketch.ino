@@ -1,10 +1,12 @@
 #include <SoftwareSerial.h>
 #define readCount 300
+#define microDelay 1
+int interval = 50;
 SoftwareSerial mySerial(10, 11);
 int pin = 6;
 int mode = 0;
 int isStopped = 1;
-int interval = 8;
+
 
 unsigned long start;
 struct read
@@ -15,7 +17,7 @@ struct read
 read reads[readCount];
 void setup()
 {
-  pinMode(pin, OUTPUT);
+  pinMode(pin, INPUT);
   Serial.begin(9600);
   mySerial.begin(9600);
 }
@@ -29,25 +31,31 @@ void activateCharge()
     Serial.println(voltage);
     delay(interval);
   }*/
+  pinMode(pin, OUTPUT);
+  start = millis();
   digitalWrite(pin, HIGH);
+  mode = 1;
 }
 void activateDischarge()
 {
+  pinMode(pin, OUTPUT);
   Serial.println(-21);
+  mode = 0;
   /*for (int i = 0; i < 10; ++i)
   {
     int voltage = analogRead(A0);
     Serial.println(voltage);
     delay(interval);
   }*/
+  start = millis();
   digitalWrite(pin, LOW);
 }
-void loop()
+void checkSerial()
 {
   while (Serial.available() > 0)
   {
-    start = millis();
     int byte = Serial.read() - 48;
+    mySerial.print("From serial:");
     mySerial.println(byte);
     if (byte == 0)
     {
@@ -70,6 +78,32 @@ void loop()
       isStopped = 1;
     }
   }
+}
+bool isIntervalOk()
+{
+  bool isOk = true;
+  if (mode == 1)
+  {
+    int refereceVoltage = reads[count / 3].value;
+    mySerial.println(refereceVoltage);
+    if (refereceVoltage < 600)
+    {
+      interval += 10;
+      isOk = false;
+    }
+    else if (refereceVoltage > 700)
+    {
+      interval -= 10;
+      isOk = false;
+    }
+    if (interval < 1)
+      interval = 1;
+  }
+  return isOk;
+}
+void loop()
+{
+  checkSerial();
   if (isStopped == 0)
   {
     int voltage = analogRead(A0);
@@ -78,16 +112,36 @@ void loop()
     reads[count].value = voltage;
     if (count == readCount)
     {
+      pinMode(pin, INPUT);
       isStopped = 1;
-      for (int i = 0; i < count; ++i)
+      if (isIntervalOk() == true)
       {
-        Serial.print(reads[i].time);
-        Serial.print("_");
-        Serial.println(reads[i].value);
+        for (int i = 0; i < count; ++i)
+        {
+          Serial.print(reads[i].time);
+          Serial.print("_");
+          Serial.println(reads[i].value);
+        }
+        Serial.println("-end-");
       }
-      Serial.println("-end-");
+      else
+      {
+        count = -1;
+        isStopped = 0;
+        pinMode(pin, OUTPUT);
+        digitalWrite(pin, LOW);
+        while (analogRead(A0) > 50);
+        pinMode(pin, INPUT);
+        activateCharge();
+      }
     }
-    count++;
-    delay(interval);
+    
   }
+  count++;
+#if microDelay==1
+  delayMicroseconds(interval);
+#else
+  delay(interval);
+#endif
+
 }

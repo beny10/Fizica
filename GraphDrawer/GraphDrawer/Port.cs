@@ -22,15 +22,16 @@ namespace GraphDrawer
         }
         public void StartProccess()
         {
-            _port.Write("2");
+            SendByte(2);
         }
         public void StopProccess()
         {
-            _port.Write("3");
+            SendByte(3);
         }
         public void SendByte(int value)
         {
             _port.Write(value.ToString());
+            _set.AddValue(new Read(0,0,ReadType.NewInstruction));
         }
         private void Read()
         {
