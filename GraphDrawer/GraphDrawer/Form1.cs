@@ -32,6 +32,7 @@ namespace GraphDrawer
                     {
                         labelIncarcare.Visible = true;
                         labelDescarcare.Visible = false;
+                        CalculateCapacity(set);
                     }));
                     break;
                 case ActionType.Discharging:
@@ -63,6 +64,16 @@ namespace GraphDrawer
                 }));
             }
             
+        }
+        private void CalculateCapacity(DataSet set)
+        {
+            int closestIndex = 0;
+            List<Read> reads=set.GetReads()
+            for (int i = 1; i < set.Count; i++)
+            {
+                if (Helpers.UntilLimit(reads[i].Voltage) < Helpers.UntilLimit(reads[closestIndex].Voltage))
+                    closestIndex = i;
+            }
         }
         private void EnableStartButton()
         {
@@ -97,5 +108,6 @@ namespace GraphDrawer
             EnableStopButton();
             _drawer.Discharge();
         }
+
     }
 }

@@ -14,6 +14,9 @@ namespace GraphDrawer
         {
             point = new Point(point.X * Scale.Width, point.Y * Scale.Height);
         }
-
+        public static int UntilLimit(int voltage)
+        {
+            return 645 - voltage;
+        }
     }
 }
