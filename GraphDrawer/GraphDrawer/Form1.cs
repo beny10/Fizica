@@ -67,13 +67,24 @@ namespace GraphDrawer
         }
         private void CalculateCapacity(DataSet set)
         {
-            int closestIndex = 0;
-            List<Read> reads=set.GetReads()
-            for (int i = 1; i < set.Count; i++)
+            int start = 0;
+            List<Read> reads = set.GetReads();
+            for (int i = 0; i < reads.Count; i++)
             {
-                if (Helpers.UntilLimit(reads[i].Voltage) < Helpers.UntilLimit(reads[closestIndex].Voltage))
+                if (reads[i].Type == ReadType.NewInstruction)
+                    start = i;
+            }
+            int closestIndex =start;
+            for (int i = start; i<set.Count; i++)
+            {
+                if (Helpers.UntilLimit(reads[i].Voltage) < Helpers.UntilLimit(reads[closestIndex].Voltage) && Helpers.UntilLimit(reads[i].Voltage)>0)
                     closestIndex = i;
             }
+            double voltage = reads[closestIndex].Voltage * 5.0/ 1024.0;
+            richTextBox1.Text=$"Cel mai apropiat voltag este{voltage}\n";
+            richTextBox1.Text += $"Timpul citirii este {reads[closestIndex].Time}ms\n";
+            double capacitorValueInMicro = reads[closestIndex].Time  / 10.0;
+            richTextBox1.Text += $"Cu o rezistenta de 10K capacitatea={capacitorValueInMicro/10000/100}F\n={capacitorValueInMicro} micro farad";
         }
         private void EnableStartButton()
         {

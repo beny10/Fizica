@@ -44,9 +44,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 54);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(804, 447);
+            this.pictureBox1.Size = new System.Drawing.Size(1064, 641);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -56,9 +57,10 @@
             this.labelIncarcare.AutoSize = true;
             this.labelIncarcare.BackColor = System.Drawing.Color.Red;
             this.labelIncarcare.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIncarcare.Location = new System.Drawing.Point(13, 13);
+            this.labelIncarcare.Location = new System.Drawing.Point(17, 16);
+            this.labelIncarcare.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelIncarcare.Name = "labelIncarcare";
-            this.labelIncarcare.Size = new System.Drawing.Size(88, 24);
+            this.labelIncarcare.Size = new System.Drawing.Size(112, 29);
             this.labelIncarcare.TabIndex = 1;
             this.labelIncarcare.Text = "Incarcare";
             // 
@@ -67,9 +69,10 @@
             this.labelDescarcare.AutoSize = true;
             this.labelDescarcare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.labelDescarcare.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescarcare.Location = new System.Drawing.Point(107, 13);
+            this.labelDescarcare.Location = new System.Drawing.Point(143, 16);
+            this.labelDescarcare.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDescarcare.Name = "labelDescarcare";
-            this.labelDescarcare.Size = new System.Drawing.Size(106, 24);
+            this.labelDescarcare.Size = new System.Drawing.Size(136, 29);
             this.labelDescarcare.TabIndex = 2;
             this.labelDescarcare.Text = "Descarcare";
             // 
@@ -78,9 +81,10 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.listView1.Location = new System.Drawing.Point(824, 44);
+            this.listView1.Location = new System.Drawing.Point(1099, 54);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(161, 369);
+            this.listView1.Size = new System.Drawing.Size(289, 373);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -97,9 +101,10 @@
             // 
             this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(231, 15);
+            this.button1.Location = new System.Drawing.Point(308, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 4;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
@@ -108,9 +113,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(312, 15);
+            this.button2.Location = new System.Drawing.Point(416, 18);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 5;
             this.button2.Text = "Stop";
             this.button2.UseVisualStyleBackColor = true;
@@ -119,9 +125,10 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(474, 15);
+            this.button3.Location = new System.Drawing.Point(632, 18);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 7;
             this.button3.Text = "Discharge";
             this.button3.UseVisualStyleBackColor = true;
@@ -130,9 +137,10 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(393, 15);
+            this.button4.Location = new System.Drawing.Point(524, 18);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 6;
             this.button4.Text = "Charge";
             this.button4.UseVisualStyleBackColor = true;
@@ -140,17 +148,19 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(824, 420);
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(1099, 435);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(161, 71);
+            this.richTextBox1.Size = new System.Drawing.Size(289, 260);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 503);
+            this.ClientSize = new System.Drawing.Size(1401, 708);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
@@ -160,6 +170,7 @@
             this.Controls.Add(this.labelDescarcare);
             this.Controls.Add(this.labelIncarcare);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

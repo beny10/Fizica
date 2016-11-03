@@ -18,5 +18,13 @@ namespace GraphDrawer
         {
             return 645 - voltage;
         }
+        public static string GetTimeStamp()
+        {
+            return DateTime.Now.ToString("yyyyMMddHHmmss");
+        }
+        public static double ConvertToVoltage(int referecenceValue)
+        {
+            return referecenceValue / 1024.0 * 5.0;
+        }
     }
 }

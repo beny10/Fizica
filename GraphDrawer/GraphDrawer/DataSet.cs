@@ -47,7 +47,7 @@ namespace GraphDrawer
         {
             try
             {
-                string[] data = value.Split('_');
+                string[] data = value.Split(',');
                 int time = Convert.ToInt32(data[0]);
                 int voltage= Convert.ToInt32(data[1]);
                 AddValue(time,voltage);

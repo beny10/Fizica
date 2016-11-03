@@ -49,6 +49,7 @@ namespace GraphDrawer
                 if(value.Contains("-end-"))
                 {
                     _packetReceived(_set);
+                    _set = new DataSet(ActionType.Charging);
                 }
                 if (value != "")
                 {

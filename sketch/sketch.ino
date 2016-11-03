@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 #define readCount 300
 #define microDelay 1
-int interval = 50;
+int interval = 800;
 SoftwareSerial mySerial(10, 11);
 int pin = 6;
 int mode = 0;
@@ -26,11 +26,11 @@ void activateCharge()
 {
   Serial.println(-20);
   /*for (int i = 0; i < 10; ++i)
-  {
+    {
     int voltage = analogRead(A0);
     Serial.println(voltage);
     delay(interval);
-  }*/
+    }*/
   pinMode(pin, OUTPUT);
   start = millis();
   digitalWrite(pin, HIGH);
@@ -42,11 +42,11 @@ void activateDischarge()
   Serial.println(-21);
   mode = 0;
   /*for (int i = 0; i < 10; ++i)
-  {
+    {
     int voltage = analogRead(A0);
     Serial.println(voltage);
     delay(interval);
-  }*/
+    }*/
   start = millis();
   digitalWrite(pin, LOW);
 }
@@ -82,6 +82,7 @@ void checkSerial()
 bool isIntervalOk()
 {
   bool isOk = true;
+  return isOk;
   if (mode == 1)
   {
     int refereceVoltage = reads[count / 3].value;
@@ -119,7 +120,7 @@ void loop()
         for (int i = 0; i < count; ++i)
         {
           Serial.print(reads[i].time);
-          Serial.print("_");
+          Serial.print(",");
           Serial.println(reads[i].value);
         }
         Serial.println("-end-");
@@ -135,7 +136,7 @@ void loop()
         activateCharge();
       }
     }
-    
+
   }
   count++;
 #if microDelay==1

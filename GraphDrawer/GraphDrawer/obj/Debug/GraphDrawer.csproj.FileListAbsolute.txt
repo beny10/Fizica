@@ -16,3 +16,13 @@ D:\Beni\Arduino Projects\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.Pr
 D:\Beni\Arduino Projects\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.csproj.GenerateResource.Cache
 D:\Beni\Arduino Projects\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.exe
 D:\Beni\Arduino Projects\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.pdb
+C:\Workspace\Fizica\GraphDrawer\GraphDrawer\bin\Debug\GraphDrawer.exe.config
+C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.exe
+C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.pdb
+C:\Workspace\Fizica\GraphDrawer\GraphDrawer\bin\Debug\GraphDrawer.exe
+C:\Workspace\Fizica\GraphDrawer\GraphDrawer\bin\Debug\GraphDrawer.pdb
+C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.csprojResolveAssemblyReference.cache
+C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.Form1.resources
+C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.Properties.Resources.resources
+C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.csproj.GenerateResource.Cache
+C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.CsvForm.resources
