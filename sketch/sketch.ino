@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 #define readCount 300
-#define microDelay 1
-int interval = 800;
+#define microDelay 0
+int interval = 5;
 SoftwareSerial mySerial(10, 11);
 int pin = 6;
 int mode = 0;

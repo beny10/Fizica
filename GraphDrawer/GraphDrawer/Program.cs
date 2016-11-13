@@ -16,7 +16,8 @@ namespace GraphDrawer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CsvForm());
+            //Application.Run(new CsvForm());
+            Application.Run(new Form1());
         }
     }
 }
