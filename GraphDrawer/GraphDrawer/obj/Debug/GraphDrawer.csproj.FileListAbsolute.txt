@@ -26,3 +26,5 @@ C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.Form1.resource
 C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.Properties.Resources.resources
 C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.csproj.GenerateResource.Cache
 C:\Workspace\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.CsvForm.resources
+D:\Beni\Arduino Projects\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.CsvForm.resources
+D:\Beni\Arduino Projects\Fizica\GraphDrawer\GraphDrawer\obj\Debug\GraphDrawer.ModeSelector.resources

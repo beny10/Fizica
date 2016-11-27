@@ -64,6 +64,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers.cs" />
+    <Compile Include="ModeSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModeSelector.Designer.cs">
+      <DependentUpon>ModeSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="Port.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModeSelector.resx">
+      <DependentUpon>ModeSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
